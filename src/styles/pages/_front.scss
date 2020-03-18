@@ -1,0 +1,19 @@
+.row.front {
+    width: 100%;
+
+    @include flex-column(center, center);
+
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .logo {
+        width: 30%;
+        margin: 4em auto;
+    
+        img {
+            width: 100%;
+        }
+    }
+}

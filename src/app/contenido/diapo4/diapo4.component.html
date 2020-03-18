@@ -1,0 +1,67 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">2</span>
+                </p>
+                <h3><span class="ball">3</span>Create and apply a numbered access-list with no more than three statements that will allow ONLY Host C to use a web browser (HTTP) to access the Finance Web Server. Other types of access from Host C to the Finance Web Server should be blocked. </h3>
+                <h3>
+                    All access from hosts in the Core or local LAN to the Finance Web Server should be blocked. All hosts in the Core and local LAN should be able to access the Public Web Server. The Core connection IP address: 198.18.196.65
+                </h3>
+                <br>
+                <h3>Hosts LAN: 192.168.33.0/24 (Addresses: 192.168.33.1 – 192.168.33.254):</h3>
+                <br>
+                <h3>Host A: 192.168.33.1</h3>
+	            <h3>Host B: 192.168.33.2</h3>
+                <h3>Host C: 192.168.33.3</h3>
+                <h3>Host D: 192.168.33.4</h3>
+                <br>
+                <h3>Servers LAN: 172.22.142.16/28 (Addresses: 172.22.142.17 – 172.22.142.30):</h3>
+                <br>
+                <h3>Finance Web Server: 172.22.142.23</h3>
+	            <h3>Public Web Server: 172.22.142.17</h3>
+                <p>
+                    <img style="width: 100%; max-width: 900px; padding: 1em; display: block; margin: auto;" class="esquema" src="assets/pic3.png">
+                </p>
+                <h3>Instead of posting the output of “show run” commands we post here the commands entered on each router to reduce some useless lines.</h3>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">R0</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>interface FastEthernet0/0</p>
+                            <p>ip address 192.168.33.254 255.255.255.0</p>
+                            <p>duplex auto</p>
+                            <p>speed auto</p>
+                            <p>!</p>
+                            <p>interface FastEthernet0/1</p>
+                            <p>ip address 172.22.242.30 255.255.255.240</p>
+                            <p>duplex auto</p>
+                            <p>speed auto</p>
+                            <p>!</p>
+                            <p>interface Serial1/0</p>
+                            <p>ip address 198.18.196.66 255.255.255.0</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>access-list 101 permit tcp host 192.168.33.3 host 172.22.142.23 eq 80</p>    
+                    <p>access-list 101 deny ip any host 172.22.142.23</p>
+                    <p>access-list 101 permit ip any any</p>
+                    <p>interface fa0/1</p>
+                    <p>ip access-group 101 out</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

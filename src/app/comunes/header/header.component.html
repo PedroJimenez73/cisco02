@@ -1,0 +1,26 @@
+<div #burger class="burger" (click)="toggleMenu()">
+    <div class="barra arriba"></div>
+    <div class="barra medio"></div>
+    <div class="barra abajo"></div>
+</div>
+<header>
+</header>
+<div #lateral class="lateral">
+    <div class="caja-titulo">
+      <div class="filtro">
+          EVALUACIÓN CISCO
+          <span id="fondo-evol"></span>
+          <span id="evol"></span>
+          <span id="texto-porcentaje"></span>
+      </div>
+    </div>
+    <div class="menu-lateral">								
+      <div id="item-menu0" class="masInfo" (click)="navTo(0)">
+            <p>Inicio</p>
+      </div>										
+      <div id="item-menu1" class="masInfo" (click)="navTo(1)">
+            <p>Preguntas de autocomprobación</p>
+      </div>																							
+      <p class="copy">&copy; 2020</p>
+    </div>
+</div>

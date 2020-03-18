@@ -1,0 +1,78 @@
+.warpper {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tabs {
+        display:flex;
+    }
+
+    .tab{
+        cursor: pointer;
+        width: 100%;
+        padding:10px 20px;
+        margin:0px 2px;
+        border-radius: 8px 8px 0 0;
+        border-top: 1px solid #1b548c;
+        border-right: 1px solid #1b548c;
+        border-left: 1px solid #1b548c;
+        display: block;
+        color:#1b548c;
+    }
+
+    .panels{
+        border-radius: 0 0 8px 8px;
+        border: 1px solid #1b548c;
+        background:white;
+        width:100%;
+        padding:20px;  
+    }
+
+    .panel{
+        display:none;
+        animation: fadein .8s;
+
+        p {
+            font-size: 0.9em;
+            margin: 0;
+            padding: 0 10px;
+        }
+
+        td {
+            border-bottom: none;
+            padding: 0 10px;
+            text-align: left;
+        }
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.radio{
+  display:none;
+}
+
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel,
+#six:checked ~ .panels #six-panel {
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab,
+#six:checked ~ .tabs #six-tab{
+  color: white;
+  background: #1b548c;
+}

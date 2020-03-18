@@ -1,0 +1,16 @@
+<footer>
+    <button (click)="exit()">Salir</button>
+    <div *ngIf="currentPantallaIndex === 1 && nuevoIntento">
+        <button (click)="doAgain()">Nuevo intento</button>
+    </div>
+    <div *ngIf="currentPantallaIndex > 0 && actFinalizada">
+        <button *ngIf="currentPantallaIndex > 0" (click)="prevPantalla()">
+            Anterior
+        </button>
+        <span id="counter"> {{currentPantallaIndex}} / {{total}}</span>
+        <button *ngIf="currentPantallaIndex < total" (click)="nextPantalla()">Siguiente</button>
+    </div>
+    <div *ngIf="currentPantallaIndex === 0">
+        <button (click)="nextPantalla()">Iniciar</button>
+    </div>
+</footer>

@@ -1,0 +1,19 @@
+<div *ngIf="loading" class="contenedor">
+    <div class="row">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!loading" class="contenedor condicional">
+    <div class="row front">
+        <div class="col-100">
+            <div class="logo">
+                <img src="assets/cisco.svg">
+            </div>
+        </div>
+    </div>
+</div>

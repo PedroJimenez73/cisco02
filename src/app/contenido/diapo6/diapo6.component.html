@@ -1,0 +1,127 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">0</span>
+                </p>
+                <h3><span class="ball">5</span>Refer to the exhibit.</h3>
+                <p>
+                    <img style="width: 100%; max-width: 900px; padding: 1em; display: block; margin: auto;" class="esquema" src="assets/pic5.png">
+                </p>
+                <h3>A layer 2 network has been built in your client location.</h3>
+                <h3>You are required to review the network devices and fix any issues identified on the VLAN configuration.</h3>
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>Verify if switch ports are assigned correct VLANs as shown in topology. Identify and fix any misconfiguration found in three switches.</li>
+                    <li>Verify if trunk links are operational between switches and the IEEE 802.1Q trunk encapsulation method is used. Identify and fix any misconfiguration found in trunk configuration.</li>
+                    <li>Make sure ports connected between switches are set as trunk ports.</li>
+                </ul>
+                <h3>Instead of posting the output of “show run” commands we post here the commands entered on each router to reduce some useless lines.</h3>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">SW1</label>
+                        <label class="tab" id="two-tab" for="two">SW2</label>
+                        <label class="tab" id="three-tab" for="three">SW3</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>interface Ethernet0/0</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                            <p> switchport trunk encapsulation dot1q</p>
+                            <p> switchport mode trunk</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/2</p>
+                            <p> switchport access vlan 500</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/3</p>
+                            <p> switchport access vlan 600</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>interface Ethernet0/0</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                            <p> switchport trunk encapsulation dot1q</p>
+                            <p> switchport mode trunk</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/2</p>
+                            <p> switchport access vlan 600</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/3</p>
+                            <p> switchport access vlan 600</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                        </div>
+                        <div class="panel" id="three-panel">
+                            <p>interface Ethernet0/0</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                            <p> switchport trunk encapsulation dot1q</p>
+                            <p> switchport mode trunk</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/2</p>
+                            <p> switchport access vlan 600</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/3</p>
+                            <p> switchport access vlan 600</p>
+                            <p> switchport mode access</p>
+                            <p> duplex auto</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <ul>
+                        <li>Native VLAN mismatch between SW1 & SW3</li>
+                        <li>SW2 interface Ethernet0/2: Wrong VLAN assignation.</li>
+                        <li>Switchport mode mismatch in SW1.</li>
+                    </ul>
+                    <p>Recommended commands: show interfaces trunk, show vlan, show running-config.</p>
+                    <p>Commands to fix the issues:</p>
+                    <br>
+                    <p>1.	Fix the native VLAN issue on SW3:</p>
+                    <br>
+                    <p>Sw3(config)# interface Ethernet0/0</p>
+                    <p>Sw3(config-if)# switchport trunk native vlan 1</p>
+                    <br>
+                    <p>2.	Fix the issue on SW2:</p>
+                    <br>
+                    <p>Sw2(config)# interface Ethernet0/2</p>
+                    <p>Sw2(config-if)# switchport access vlan 500</p>
+                    <br>
+                    <p>3.	Fix the issue on SW1:</p>
+                    <br>
+                    <p>Sw1(config)# interface Ethernet0/0</p>
+                    <p>Sw1(config-if)# switchport trunk encapsulation dot1q</p>
+                    <p>Sw1(config-if)# switchport mode trunk</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

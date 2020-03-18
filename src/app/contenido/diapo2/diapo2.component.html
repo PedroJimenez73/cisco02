@@ -1,0 +1,191 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">4</span>
+                </p>
+                <h3><span class="ball">1</span>The topology below is running OSPF. You are required to troubleshoot and resolve the OSPF issues between the various routers.</h3>
+                <p>
+                    <img style="width: 100%; max-width: 900px; padding: 1em; display: block; margin: auto;" class="esquema" src="assets/pic1.png">
+                </p>
+                <h3>Instead of posting the output of “show run” commands we post here the commands entered on each router to reduce some useless lines.</h3>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <input class="radio" id="five" name="group" type="radio">
+                    <input class="radio" id="six" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">R1</label>
+                        <label class="tab" id="two-tab" for="two">R2</label>
+                        <label class="tab" id="three-tab" for="three">R3</label>
+                        <label class="tab" id="four-tab" for="four">R4</label>
+                        <label class="tab" id="five-tab" for="five">R5</label>
+                        <label class="tab" id="six-tab" for="six">R6</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>interface Loopback0</p>
+                            <p>description ***Loopback***</p>
+                            <p>ip address 192.168.1.1 255.255.255.255</p>
+                            <p>ip ospf 1 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/0</p>
+                            <p>description **Connected to R1-LAN**</p>
+                            <p>ip address 10.10.110.1 255.255.255.0</p>
+                            <p>ip ospf 1 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                            <p>description **Connected to L2SW**</p>
+                            <p>ip address 10.10.230.1 255.255.255.0</p>
+                            <p>ip ospf 1 area 0</p>
+                            <p>!</p>
+                            <p>router ospf 1</p>
+                            <p>log-adjacency-changes</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>!</p>
+                            <p>interface Loopback0</p>
+                             <p>description **Loopback**</p>
+                             <p>ip address 192.168.2.2 255.255.255.255</p>
+                             <p>ip ospf 2 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/0</p>
+                             <p>description **Connected to R2-LAN**</p>
+                             <p>ip address 10.10.120.1 255.255.255.0</p>
+                             <p>ip ospf 2 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                             <p>description **Connected to L2SW**</p>
+                             <p>ip address 10.10.230.2 255.255.255.0</p>
+                             <p>ip ospf 2 area 0</p>
+                            <p>!</p>
+                            <p>router ospf 2</p>
+                             <p>log-adjacency-changes</p>
+                        </div>
+                        <div class="panel" id="three-panel">
+                            <p>username R6 password CISCO36</p>
+                            <p>!</p>
+                            <p>interface Loopback0</p>
+                             <p>description **Loopback**</p>
+                             <p>ip address 192.168.3.3 255.255.255.255</p>
+                             <p>ip ospf 3 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/0</p>
+                             <p>description **Connected to L2SW**</p>
+                             <p>ip address 10.10.230.3 255.255.255.0</p>
+                             <p>ip ospf 3 area 0</p>
+                            <p>!</p>
+                            <p>interface Serial1/0</p>
+                             <p>description **Connected to R4-Branch1 office**</p>
+                             <p>ip address 10.10.240.1 255.255.255.252</p>
+                             <p>encapsulation ppp</p>
+                             <p>ip ospf 3 area 0</p>
+                            <p>!</p>
+                            <p>interface Serial1/1</p>
+                             <p>description **Connected to R5-Branch2 office**</p>
+                             <p>ip address 10.10.240.5 255.255.255.252</p>
+                             <p>encapsulation ppp</p>
+                             <p>ip ospf hello-interval 50</p>
+                             <p>ip ospf 3 area 0</p>
+                            <p>!</p>
+                            <p>interface Serial1/2</p>
+                             <p>description **Connected to R6-Branch3 office**</p>
+                             <p>ip address 10.10.240.9 255.255.255.252</p>
+                             <p>encapsulation ppp</p>
+                             <p>ip ospf 3 area 0</p>
+                            <p> ppp authentication chap</p>
+                            <p>!</p>
+                            <p>router ospf 3</p>
+                             <p>router-id 192.168.3.3</p>
+                            <p>!</p>                          
+                        </div>
+                        <div class="panel" id="four-panel">
+                            <p>!</p>
+                            <p>interface Loopback0</p>
+                             <p>description **Loopback**</p>
+                             <p>ip address 192.168.4.4 255.255.255.255</p>
+                             <p>ip ospf 4 area 2</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/0</p>
+                             <p>ip address 172.16.113.1 255.255.255.0</p>
+                             <p>ip ospf 4 area 2</p>
+                            <p>!</p>
+                            <p>interface Serial1/0</p>
+                             <p>description **Connected to R3-Main Branch office**</p>
+                             <p>ip address 10.10.240.2 255.255.255.252</p>
+                             <p>encapsulation ppp</p>
+                             <p>ip ospf 4 area 2</p>
+                            <p>!</p>
+                            <p>router ospf 4</p>
+                             <p>log-adjacency-changes</p>                                                    
+                        </div>
+                        <div class="panel" id="five-panel">
+                            <p>!</p>
+                            <p>interface Loopback0</p>
+                             <p>description **Loopback**</p>
+                             <p>ip address 192.168.5.5 255.255.255.255</p>
+                             <p>ip ospf 5 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/0</p>
+                             <p>ip address 172.16.114.1 255.255.255.0</p>
+                             <p>ip ospf 5 area 0</p>
+                            <p>!</p>
+                            <p>interface Serial1/0</p>
+                             <p>description **Connected to R3-Main Branch office**</p>
+                             <p>ip address 10.10.240.6 255.255.255.252</p>
+                             <p>encapsulation ppp</p>
+                             <p>ip ospf 5 area 0</p>
+                            <p>!</p>
+                            <p>router ospf 5</p>
+                            <p>log-adjacency-changes</p>                           
+                        </div>
+                        <div class="panel" id="six-panel">
+                            <p>username R3 password CISCO36</p>
+                            <p>!</p>
+                            <p>interface Loopback0</p>
+                             <p>description **Loopback**</p>
+                             <p>ip address 192.168.6.6 255.255.255.255</p>
+                             <p>ip ospf 6 area 0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/0</p>
+                             <p>ip address 172.16.115.1 255.255.255.0</p>
+                             <p>ip ospf 6 area 0</p>
+                            <p>!</p>
+                            <p>interface Serial1/0</p>
+                             <p>description **Connected to R3-Main Branch office**</p>
+                             <p>ip address 10.10.240.10 255.255.255.252</p>
+                             <p>encapsulation ppp</p>
+                             <p>ip ospf 6 area 0</p>
+                             <p>ppp authentication chap</p>
+                            <p>!</p>
+                            <p>router ospf 6</p>
+                             <p>router-id 192.168.3.3</p>
+                            <p>!</p>                           
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar respuesta</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Answer:</p>
+                    <p>
+                        In the output above we see their Area IDs are mismatched; interface S1/0 of R3 is in area 0 (R3: ip ospf 3 area 0) while interface s1/0 of R4 is in area 2 (R4: ip ospf 4 area 2).
+                    </p>    
+                    <p>
+                        In the output above we see the line “ip ospf hello-interval 50” on R3. This command sets the number of seconds R3 waits before sending the next hello packet out this interface. In this case after configuring this command, R3 will send hello packets to R5 every 50 seconds. But the default value of hello-interval is 10 seconds and R5 is using it.
+                    </p>    
+                    <p>
+                        In the output above we see that R6 uses the same router-id of R3 (192.168.3.3) so OSPF neighborship cannot be established
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

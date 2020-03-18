@@ -1,0 +1,294 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">1</span>
+                </p>
+                <h3><span class="ball">4</span>The topology below has DHCP, NAT and NTP configurations. You are required to troubleshoot and resolve the various issues:</h3>
+                <br>
+                <ul>
+                    <li>R3 is not receiving the IP address via DHCP.</li>
+                    <li>R2 is not receiving NTP updates from R1.</li>
+                    <li>Applications that are installed on PC’s in R2 LAN network 10.100.20.0/24 are unable to communicate with Server1.</li>
+                    <li>Users are unable to reach internet sites. R1 is not correctly configured.</li>
+                </ul>
+                <p>
+                    <img style="width: 100%; max-width: 900px; padding: 1em; display: block; margin: auto;" class="esquema" src="assets/pic4.png">
+                </p>
+                <h3>You have access to R1, R2 and R3:</h3>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <input class="radio" id="five" name="group" type="radio">
+                    <input class="radio" id="six" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">R1# show running-config</label>
+                        <label class="tab" id="two-tab" for="two">R1# show ip interface brief</label>
+                        <label class="tab" id="three-tab" for="three">R2# show running-config</label>
+                        <label class="tab" id="four-tab" for="four">R2# show ip interface brief</label>
+                        <label class="tab" id="five-tab" for="five">R3# show running-config</label>
+                        <label class="tab" id="six-tab" for="six">R3# show ip interface brief</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>interface Ethernet0/0</p>
+                            <p> description Link to ISP</p>
+                            <p> ip address 209.165.200.225 255.255.255.224</p>
+                            <p> ip nat inside</p>
+                            <p> ip virtual-reassembly in</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                            <p> description Link to Server 1</p>
+                            <p> ip address 172.16.200.1 255.255.255.0</p>
+                            <p> ip nat outside</p>
+                            <p> ip virtual-reassembly in</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/2</p>
+                            <p> description Link to R2</p>
+                            <p> ip address 192.168.10.1 255.255.255.252</p>
+                            <p> ip nat outside</p>
+                            <p> ip virtual-reassembly in</p>
+                            <p></p>
+                            <p>ip nat inside source list LOCAL interface Ethernet0/0 overload</p>
+                            <p>ip route 0.0.0.0 0.0.0.0 209.165.200.226</p>
+                            <p>!</p>
+                            <p>ip access-list standard LOCAL</p>
+                            <p> permit 10.0.0.0 0.255.255.255</p>
+                            <p> permit 172.16.0.0 0.0.255.255</p>
+                            <p> permit 192.168.0.0 0.0.255.255</p>
+                            <p></p>
+                            <p>ntp server 209.165.200.226</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <table>
+                                <tr>
+                                    <td>Interface</td>
+                                    <td>IP-Address</td>
+                                    <td>OK? Method</td>
+                                    <td>Status</td>
+                                    <td>Protocol</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/0 </td>
+                                    <td>209.165.200.225</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/1</td>
+                                    <td>172.16.200.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/2 </td>
+                                    <td>192.168.10.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/3 </td>
+                                    <td>unassigned</td>
+                                    <td>YES unset</td>
+                                    <td>admin down</td>
+                                    <td>down</td>
+                                </tr>
+                                <tr>
+                                    <td>Loopback0</td>
+                                    <td>192.168.250.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>NVI0</td>
+                                    <td>192.168.250.1</td>
+                                    <td>YES unset</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="panel" id="three-panel">
+                            <p>ip dhcp excluded-address 192.168.20.1</p>
+                            <p>!</p>
+                            <p>ip dhcp pool DHCPASSIGN3</p>
+                            <p> network 192.168.20.0 255.255.255.252</p>
+                            <p></p>
+                            <p>interface Ethernet0/0</p>
+                            <p> description Link to R3</p>
+                            <p> ip address 192.168.20.1 255.255.255.252</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/2</p>
+                            <p> description Link to R1</p>
+                            <p> ip address 192.168.10.2 255.255.255.252</p>
+                            <p> ip access-group SERVER1BLOCK in</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/3</p>
+                            <p> description Link to LAN</p>
+                            <p> ip address 10.100.20.1 255.255.255.0</p>
+                            <p></p>
+                            <p>ip access-list standard SERVER1BLOCK</p>
+                            <p> deny   172.16.200.0 0.0.0.255</p>
+                            <p> permit any</p>
+                            <p></p>
+                            <p>ntp server 192.168.100.1</p>
+                        </div>
+                        <div class="panel" id="four-panel">
+                            <table>
+                                <tr>
+                                    <td>Interface</td>
+                                    <td>IP-Address</td>
+                                    <td>OK? Method</td>
+                                    <td>Status</td>
+                                    <td>Protocol</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/0 </td>
+                                    <td>192.168.20.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/1</td>
+                                    <td>unassigned</td>
+                                    <td>YES unset</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/2 </td>
+                                    <td>192.168.10.2</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/3 </td>
+                                    <td>10.100.20.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Loopback0</td>
+                                    <td>192.168.250.2</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="panel" id="five-panel">
+                            <p>interface Ethernet0/0</p>
+                            <p> description Link to LAN</p>
+                            <p> ip address 10.100.10.1 255.255.255.0</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/1</p>
+                            <p> description Link to R2</p>
+                            <p> no ip address</p>
+                            <p>!</p>
+                            <p>interface Ethernet0/2</p>
+                            <p> description Link to Server2</p>
+                            <p> ip address 10.100.11.1 255.255.255.0</p>
+                        </div>
+                        <div class="panel" id="six-panel">
+    
+
+                            <table>
+                                <tr>
+                                    <td>Interface</td>
+                                    <td>IP-Address</td>
+                                    <td>OK? Method</td>
+                                    <td>Status</td>
+                                    <td>Protocol</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/0 </td>
+                                    <td>10.100.10.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/1</td>
+                                    <td>unassigned</td>
+                                    <td>YES unset</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/2 </td>
+                                    <td>10.100.11.1</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                                <tr>
+                                    <td>Ethernet0/3 </td>
+                                    <td>unassigned</td>
+                                    <td>YES unset</td>
+                                    <td>admin down</td>
+                                    <td>down</td>
+                                </tr>
+                                <tr>
+                                    <td>Loopback0</td>
+                                    <td>192.168.250.3</td>
+                                    <td>YES manual</td>
+                                    <td>up</td>
+                                    <td>up</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <ul>
+                        <li>
+                            On R3, DHCP is not enabled on the interface that is connected to R2.
+                            <ul>
+                                <li>From the description we learn interface E0/1 is connected to R2. Use the “show ip interface brief” command to verify the IP address of this interface.</li>
+                                <li>Therefore, we can conclude this interface does not have any IP address and there is no configuration on this interface.</li>
+                                <li>If R3 wants to receive an IP address from R2 via DHCP, interface E0/1 should be configured with the command “ip address dhcp”.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            The IP address that is used in the NTP configuration on R2 router is incorrect.
+                            <ul>
+                                <li>R1 & R2 connect to each other via E0/2 interface (The IP addresses of these interfaces belong to 192.168.10.0/30 subnet). Both of them are “up/up” so the link connecting between R1 & R2 is good.</li>
+                                <li>Next, we need to verify the NTP configuration on R2 with the “show running-config” command.</li>
+                                <li>There is only one command related to NTP configuration on R2 and we see the IP address of 192.168.100.1 is not correct. It should be 192.168.10.1 (IP address of interface E0/2 of R1), not 192.168.100.1.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            A standard ACL statement that is configured on R2 is blocking the traffic sourced from Server1 network.
+                            <ul>
+                                <li>We notice on R2 there is an access-list which is applied to E0/2 interface with inbound direction. The purpose of this access-list is to block traffic with source IP address of 172.16.200.0/24 so it will block all traffic sent from Server 1 to us.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            NAT configurations on the interfaces are incorrectly configured on Router R1:
+                            <ul>
+                                <li>From the R1 “show running-config” command, we notice that interface E0/0 (connected to ISP) has been configured as “nat inside” while interfaces E0/1 & E0/2 (connected to our company) have been configured as “nat outside”. This is not correct because “nat inside” should be configured with interfaces connected to our company while “nat outside” should be configured with interfaces connected to the internet. Therefore, we can conclude the NAT configuration on these interfaces is not correct.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
