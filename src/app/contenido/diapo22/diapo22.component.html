@@ -1,0 +1,50 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">4</span>
+                </p>
+                <h3><span class="ball">21</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 540px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura21.png">
+                </p>
+                <p>Which ports are STP-designated ports?</p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">R3# Show ip route</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Interface Loopback 1</p>
+                            <p>Gateway of the last resort is not set</p>
+                            <p>192.168.50.0/26 is variably subnetted 6 subnets 2 masks</p>
+                            <p>C 192.168.50.64/26 is directly connected, Fastethernet0</p>
+                            <p>C 192.168.50.8/30 is directly connected, serial0/1</p>
+                            <p>C 192.168.50.0/30 is directly connected, serial0/0</p>
+                            <p>O 192.168.50.4/30 [110/21024000] via 192.168.50.9,02:52:16, serial0/1</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[110/21024000] via 192.168.50.1,02:52:16, serial0/0</p>
+                            <p>O 192.168.50.192/26 [110/20357600] via 192.168.50.9,02:52:16, serial0/1</p>
+                            <p>O 192.168.50.128/26 [110/20357600] via 192.168.50.1,02:52:17, serial0/0</p>
+                        </div>
+                    </div>
+                </div> 
+                <p>In the network diagram above, which path will packets take when traveling from host 192.168.50.126 to host 192.168.50.5?</p>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Packets will travel from R3 to R1 and from R3 to R2 to R1.</p>
+                    <p>We begin by identifying to which network host 192.168.50.126 belongs. IP address 192.168.50.126 is the last usable address for network 192.168.50.64/26, which means it is directly connected to Router 3.</p>
+                    <p>Next, we need to identify where 192.168.50.5 is located. By examining the diagram, we can see IP 192.168.50.5 is Router 1's interface that connects directly with Router 2.</p>
+                    <p>Finally, to understand the path packets will take, we examine the output of Router 3's routing table and discover there are two equal cost links to network 192.168.50.4/30. So, OSPF will load-balance between both paths.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

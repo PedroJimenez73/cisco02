@@ -1,0 +1,48 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">3</span>
+                </p>
+                <h3><span class="ball">22</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 540px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura22.png">
+                </p>
+                <p>Instead of posting the output of “show run” commands we post here the commands entered on switch1 to reduce some useless lines.</p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Switch1#</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Enable secret 5 $qwe345dfg63</p>
+                            <p>Enable password guess</p>
+                            <p>Interface vlan1</p>
+                            <p>&nbsp;&nbsp;Ip address 192.168.24.2 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;No ip route-cache</p>
+                            <p>Ip http server</p>
+                            <p>Line con 0</p>
+                            <p>Line vty 0 4</p>
+                            <p>&nbsp;&nbsp;Password cisco</p>
+                            <p>&nbsp;&nbsp;Login</p>
+                        </div>
+                    </div>
+                </div> 
+                <p>The network administrator cannot connect to Switch 1 over a Telnet session, although the hosts attached to Switch1 can ping the interface Fa0/0 of the router. Given the information in the graphic and if the router and Switch2 are configured properly, which of the following commands should be issued on Switch1 to correct this problem? </p>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Configure the command ip default-gateway with the address 192.168.24.1 in switch1.</p>
+                    <p>Without the default-gateway configured on a host on a network, it cannot return packets outside its network and in this case, as the administrator who wants to connect this out of the network, we have no choice but to configure the default-gateway.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

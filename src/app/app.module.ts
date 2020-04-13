@@ -13,6 +13,26 @@ import { PantallaComponent } from './pantalla/pantalla.component';
 import { Diapo4Component } from './contenido/diapo4/diapo4.component';
 import { Diapo5Component } from './contenido/diapo5/diapo5.component';
 import { Diapo6Component } from './contenido/diapo6/diapo6.component';
+import { Diapo7Component } from './contenido/diapo7/diapo7.component';
+import { Diapo8Component } from './contenido/diapo8/diapo8.component';
+import { Diapo9Component } from './contenido/diapo9/diapo9.component';
+import { Diapo10Component } from './contenido/diapo10/diapo10.component';
+import { Diapo11Component } from './contenido/diapo11/diapo11.component';
+import { Diapo12Component } from './contenido/diapo12/diapo12.component';
+import { Diapo13Component } from './contenido/diapo13/diapo13.component';
+import { Diapo14Component } from './contenido/diapo14/diapo14.component';
+import { Diapo15Component } from './contenido/diapo15/diapo15.component';
+import { Diapo16Component } from './contenido/diapo16/diapo16.component';
+import { Diapo17Component } from './contenido/diapo17/diapo17.component';
+import { Diapo18Component } from './contenido/diapo18/diapo18.component';
+import { Diapo19Component } from './contenido/diapo19/diapo19.component';
+import { Diapo20Component } from './contenido/diapo20/diapo20.component';
+import { Diapo21Component } from './contenido/diapo21/diapo21.component';
+import { Diapo22Component } from './contenido/diapo22/diapo22.component';
+import { Diapo23Component } from './contenido/diapo23/diapo23.component';
+import { Diapo24Component } from './contenido/diapo24/diapo24.component';
+import { Diapo25Component } from './contenido/diapo25/diapo25.component';
+import { Diapo26Component } from './contenido/diapo26/diapo26.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +47,27 @@ import { Diapo6Component } from './contenido/diapo6/diapo6.component';
     Diapo3Component,
     Diapo4Component,
     Diapo5Component,
-    Diapo6Component
+    Diapo6Component,
+    Diapo7Component,
+    Diapo8Component,
+    Diapo9Component,
+    Diapo10Component,
+    Diapo11Component,
+    Diapo12Component,
+    Diapo13Component,
+    Diapo14Component,
+    Diapo15Component,
+    Diapo16Component,
+    Diapo17Component,
+    Diapo18Component,
+    Diapo19Component,
+    Diapo20Component,
+    Diapo21Component,
+    Diapo22Component,
+    Diapo23Component,
+    Diapo24Component,
+    Diapo25Component,
+    Diapo26Component
   ],
   imports: [
     BrowserModule
@@ -41,7 +81,26 @@ import { Diapo6Component } from './contenido/diapo6/diapo6.component';
     Diapo3Component,
     Diapo4Component,
     Diapo5Component,
-    Diapo6Component
-  ]
+    Diapo6Component,
+    Diapo7Component,
+    Diapo8Component,
+    Diapo9Component,
+    Diapo10Component,
+    Diapo11Component,
+    Diapo12Component,
+    Diapo13Component,
+    Diapo14Component,
+    Diapo15Component,
+    Diapo16Component,
+    Diapo17Component,
+    Diapo18Component,
+    Diapo19Component,
+    Diapo20Component,
+    Diapo21Component,
+    Diapo22Component,
+    Diapo23Component,
+    Diapo24Component,
+    Diapo25Component,
+    Diapo26Component  ]
 })
 export class AppModule { }

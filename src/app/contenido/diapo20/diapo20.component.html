@@ -1,0 +1,97 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">6</span>
+                </p>
+                <h3><span class="ball">19</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 540px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura19.png">
+                </p>
+                <p>How many broadcast and collision domains are in the exhibit?</p>
+                <hr>
+                <!-- <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Router: Interface configuration</label>
+                        <label class="tab" id="two-tab" for="two">Router: Acl’s</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Interface Loopback 1</p>
+                            <p>&nbsp;&nbsp;Ip address 172.16.4.1 255.255.255.0</p>
+                            <p>Interface Loopback 2</p>
+                            <p>&nbsp;&nbsp;Ip address 10.145.145.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:3::/64 eui-64</p>
+                            <p>Interface Fastethernet0/0</p>
+                            <p>&nbsp;&nbsp;Ip address 10.4.4.3 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access-group 106 in</p>
+                            <p>Interface Fastethernet0/1</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Shutdown</p>
+                            <p>Interface serial 0/0/0</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 out</p>
+                            <p>Interface serial 0/0/0.1 point-to-point</p>
+                            <p>&nbsp;&nbsp;Ip address 10.140.3.2 255.255.255.0</p>
+                            <p>Interface serial 0/0/1</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;ip address 10.45.45.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 in</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:10::/64 eui-64</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>Access-list 102 permit tcp any any eq ftp</p>
+                            <p>Access-list 102 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 102 deny tcp any any eq telnet</p>
+                            <p>Access-list 102 deny icmp any any echo-reply</p>
+                            <p>Access-list 102 permit any any</p>
+                            <br>
+                            <p>Access-list 104 permit tcp any any eq ftp</p>
+                            <p>Access-list 104 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 104 deny tcp any any eq telnet</p>
+                            <p>Access-list 104 permit icmp any any echo</p>
+                            <p>Access-list 104 deny icmp any any echo-reply</p>
+                            <p>Access-list 104 permit any any</p>
+                            <br>
+                            <p>Access-list 106 permit tcp any any eq ftp</p>
+                            <p>Access-list 106 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 106 deny tcp any any eq telnet</p>
+                            <p>Access-list 106 permit icmp any any echo-reply</p>
+                            <br>
+                            <p>Access-list 110 permit udp any any eq domain </p>
+                            <p>Access-list 110 permit udp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any eq domain </p>
+                            <p>Access-list 110 permit tcp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any</p>
+                            <br>
+                            <p>Access-list 114 permit ip 10.4.4.0 0.0.0.255 any</p>
+                            <br>
+                            <p>Access-list 115 permit ip 0.0.0.0 255.255.255.0 any</p>
+                            <br>
+                            <p>Access-list 122 deny tcp any any</p>
+                            <p>Access-list 122 deny ip any any echo-reply</p>
+                            <p>Access-list 122 permit ip any any</p>
+                        </div>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>A broadcast domain is a logical division of a computer network, in which all nodes can reach each other by broadcast at the data link layer. A broadcast domain can be within the same LAN segment or it can be bridged to other LAN segments. </p>
+                    <p>In terms of current popular technologies, any computer connected to the same Ethernet repeater or switch is a member of the same broadcast domain. Further, any computer connected to the same set of inter-connected switches/repeaters is a member of the same broadcast domain. Routers and other higher-layer devices form boundaries between broadcast domains. </p>
+                    <p>This is as compared to a collision domain, which would be all nodes on the same set of inter-connected repeaters, divided by switches and learning bridges. Collision domains are generally smaller than, and contained within, broadcast domains. </p>
+                    <p>While some layer two network devices are able to divide the collision domains, broadcast domains are only divided by layer 3 network devices such as routers or layer 3 switches. Separating VLANs divides broadcast domains as well.</p>
+                    <p>Therefore, the solution is that There are two broadcast domains and seven collision domains.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

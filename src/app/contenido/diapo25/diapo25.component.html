@@ -1,0 +1,41 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">1</span>
+                </p>
+                <h3><span class="ball">24</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura24.png">
+                </p>
+                <p>The following commands are executed on interface fa0/1 of 2950Switch.</p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">2950Switch</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>2950Switch(config-if)# switchport port-security</p>
+                            <p>2950Switch(config-if)# switchport port-security mac-address sticky</p>
+                            <p>2950Switch(config-if)# switchport port-security maximum 1</p>
+                        </div>
+                    </div>
+                </div>
+                <p>The Ethernet frame that is shown arrives on interface fa0/1. What two functions will occur when this frame is received by 2950Switch?</p>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Only host A will be allowed to transmit frames on fa0/1.</p>
+                    <p>All frames arriving on 2950Switch with a destination of 0000.00aa.aaaa will be forwarded out fa0/1.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

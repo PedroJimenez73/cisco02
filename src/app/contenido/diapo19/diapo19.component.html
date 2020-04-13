@@ -1,0 +1,139 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">7</span>
+                </p>
+                <h3><span class="ball">18</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura18.png">
+                </p>
+                <p>You are tasked to configure Internet access on a router. The ISP has provided the company six public IP addresses of 198.18.184.105 198.18.184.110. The company has 14 hosts that need to access the internet simultaneously. The hosts in the company LAN have been assigned private space addresses in the range of 192.168.100.17 – 192.168.100.30.</p>
+                <p>The following have already been configured on the router：</p>
+                <ul>
+                    <li>Router basic configuration</li>
+                    <li>Interfaces have been configured for NAT inside (Fa0/0) and NAT outside (s0/0)</li>
+                    <li>The appropriate static routes have also been configured</li>
+                    <li>All passwords have been temporarily set to “cisco”</li>
+                </ul>
+                <p>Tasks:</p>
+                <ul>
+                    <li>Use NAT to provide Internet access to all hosts in the company LAN.</li>
+                    <li>Name the router BCN</li>
+                    <li>Inside global addresses: 198.18.184.105 198.18.184.110/29</li>
+                    <li>Inside local addresses: 192.168.100.17 – 192.168.100.30/28</li>
+                    <li>Numer of inside hosts: 14</li>
+                </ul>
+                <hr>
+                <!-- <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Router: Interface configuration</label>
+                        <label class="tab" id="two-tab" for="two">Router: Acl’s</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Interface Loopback 1</p>
+                            <p>&nbsp;&nbsp;Ip address 172.16.4.1 255.255.255.0</p>
+                            <p>Interface Loopback 2</p>
+                            <p>&nbsp;&nbsp;Ip address 10.145.145.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:3::/64 eui-64</p>
+                            <p>Interface Fastethernet0/0</p>
+                            <p>&nbsp;&nbsp;Ip address 10.4.4.3 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access-group 106 in</p>
+                            <p>Interface Fastethernet0/1</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Shutdown</p>
+                            <p>Interface serial 0/0/0</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 out</p>
+                            <p>Interface serial 0/0/0.1 point-to-point</p>
+                            <p>&nbsp;&nbsp;Ip address 10.140.3.2 255.255.255.0</p>
+                            <p>Interface serial 0/0/1</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;ip address 10.45.45.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 in</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:10::/64 eui-64</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>Access-list 102 permit tcp any any eq ftp</p>
+                            <p>Access-list 102 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 102 deny tcp any any eq telnet</p>
+                            <p>Access-list 102 deny icmp any any echo-reply</p>
+                            <p>Access-list 102 permit any any</p>
+                            <br>
+                            <p>Access-list 104 permit tcp any any eq ftp</p>
+                            <p>Access-list 104 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 104 deny tcp any any eq telnet</p>
+                            <p>Access-list 104 permit icmp any any echo</p>
+                            <p>Access-list 104 deny icmp any any echo-reply</p>
+                            <p>Access-list 104 permit any any</p>
+                            <br>
+                            <p>Access-list 106 permit tcp any any eq ftp</p>
+                            <p>Access-list 106 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 106 deny tcp any any eq telnet</p>
+                            <p>Access-list 106 permit icmp any any echo-reply</p>
+                            <br>
+                            <p>Access-list 110 permit udp any any eq domain </p>
+                            <p>Access-list 110 permit udp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any eq domain </p>
+                            <p>Access-list 110 permit tcp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any</p>
+                            <br>
+                            <p>Access-list 114 permit ip 10.4.4.0 0.0.0.255 any</p>
+                            <br>
+                            <p>Access-list 115 permit ip 0.0.0.0 255.255.255.0 any</p>
+                            <br>
+                            <p>Access-list 122 deny tcp any any</p>
+                            <p>Access-list 122 deny ip any any echo-reply</p>
+                            <p>Access-list 122 permit ip any any</p>
+                        </div>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>The company has 14 hosts that need to access the internet simultaneously, but we just have 6 public IP addresses from 198.18.184.105 to 198.18.184.110/29. Therefore, we have to use NAT overload (or PAT)</p>
+                    <br>
+                    <p>Router>enable</p>
+                    <p>Router#configure terminal</p>
+                    <br>
+                    <p>First you should change the router’s name to BCN</p>
+                    <br>
+                    <p>Router(config)#hostname BCN</p>
+                    <br>
+                    <p>Create a NAT pool of global addresses to be allocated with their netmask (/29 = 255.255.255.248). </p>
+                    <br>
+                    <p>BCN(config)#ip nat pool mypool 198.18.184.105 198.18.184.110 netmask 255.255.255.248</p>
+                    <br>
+                    <p>Create a standard access control list that permits the addresses that are to be translated</p>
+                    <br>
+                    <p>BCN(config)#access-list 1 permit 192.168.100.16 0.0.0.15</p>
+                    <br>
+                    <p>Establish dynamic source translation, specifying the access list that was defined in the prior step</p>
+                    <br>
+                    <p>BCN(config)#ip nat inside source list 1 pool mypool overload </p>
+                    <br>
+                    <p>This command translates all source addresses that pass access list 1, which means a source address from 192.168.100.17 to 192.168.100.30, into an address from the pool named mypool (the pool contains addresses from 198.18.184.105 to 198.18.184.110)</p>
+                    <p>Overload keyword allows to map multiple IP addresses to a single registered IP address (many-to-one) by using different ports</p>
+                    <p>The question said that appropriate interfaces have been configured for NAT inside and NAT outside statements.</p>
+                    <p>This is how to configure the NAT inside and NAT outside, just for your understanding:</p>
+                    <br>
+                    <p>BCN (config)#interface fa0/0</p>
+                    <p>BCN (config-if)#ip nat inside</p>
+                    <p>BCN (config-if)#exit</p>
+                    <p>BCN (config)#interface s0/0</p>
+                    <p>BCN (config-if)#ip nat outside</p>
+                    <p>BCN (config-if)#end</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

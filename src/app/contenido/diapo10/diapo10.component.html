@@ -1,0 +1,46 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">16</span>
+                </p>
+                <h3><span class="ball">9</span>Refer to the exhibit. An extended ACL has been configured and applied to router R2. The configuration failed to work as intended. Which two changes stop outbound traffic on TCP ports 25 and 80 to 10.0.20.0/26 from the 10.0.10.0/26 subnet while still allowing all other traffic? </h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura9.png">
+                </p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <input class="radio" id="five" name="group" type="radio">
+                    <input class="radio" id="six" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">R2</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>R2#config t</p>
+                            <p>R2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq smtp</p>
+                            <p>R2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq www</p>
+                            <p>R2(config)#int gi0/2</p>
+                            <p>R2(config-if)#ip access-group 101 in</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Add a “permit ip any any” statement at the end of ACL 101 for allowed traffic</p>
+                    <p>The source and destination IPs must be swapped in ACL 101</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

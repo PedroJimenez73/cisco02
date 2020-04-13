@@ -1,0 +1,58 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">14</span>
+                </p>
+                <h3><span class="ball">11</span>Refer to exhibit. An engineer is configuring the New York router to reach the Lo1 interface of the Atlanta router using interface S0/0/0 as the primary path. Which two commands must be configured on the New York router so that it can reach the Lo1 interface of the Atlanta router via Washington when the link between New York and Atlanta goes down?</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura11.png">
+                </p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <input class="radio" id="five" name="group" type="radio">
+                    <input class="radio" id="six" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Valencia</label>
+                        <label class="tab" id="two-tab" for="two">Zaragoza</label>
+                        <label class="tab" id="three-tab" for="three">Madrid</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>S0/0/0: 2012::1/126</p>
+                            <p>S0/0/1: 2013::1/126</p>
+                            <p>Loopback1: 2000::1/128</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>S0/0/0: 2012::2/126</p>
+                            <p>S0/0/1: 2023::2/126</p>
+                            <p>Loopback2:2000::2/128</p>
+                        </div>
+                        <div class="panel" id="three-panel">
+                            <p>S0/0/0: 2023::3/126</p>
+                            <p>S0/0/1: 2013::3/126</p>
+                            <p>Loopback3: 2000::3/128</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>ipv6 route 2000::1/128 2012::1</p>
+                    <p>ipv6 route 2000::1/128 2023::2 5</p>
+                    <br>
+                    <p>Floating static routes are static routes that have an administrative distance greater than the administrative distance (AD) of another static route or dynamic routes. By default, a static route has an AD of 1 then floating static route must have the AD greater than 1. Floating static route has a manually configured administrative distance greater than that of the primary route and therefore would not be in the routing table until the primary route fails.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

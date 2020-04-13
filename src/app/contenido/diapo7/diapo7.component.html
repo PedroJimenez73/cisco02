@@ -1,0 +1,55 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">19</span>
+                </p>
+                <h3><span class="ball">6</span>Refer to the exhibit. Which prefix does Router 1 use for traffic to Host A?</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/pic6.png">
+                </p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Router1#show ip route</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Gateway of last resort is 10.10.11.2 to network 0.0.0.0</p>
+                            <br>
+                            <p>&nbsp;&nbsp;209.165.200.0/27 is sudnetted, 1 subnets</p>
+                            <p>B    209.165.200.224 [20/0] via 10.10.12.2, 03:03:03</p>
+                            <p>&nbsp;&nbsp;209.165.201.0/27 is sudnetted, 1 subnets</p>
+                            <p>B    209.165.201.0 [20/0] via 10.10.12.2, 03:03:03</p>
+                            <p>&nbsp;&nbsp;209.165.202.0/27 is subnetted, 1 subnets</p>
+                            <p>B    209.165.202.128 [20/0] via 10.10.12.2, 03:03:03</p>
+                            <p>&nbsp;&nbsp;10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks</p>
+                            <p>C    10.10.10.0/28 is directly connected, GigabitEthernet0/0</p>
+                            <p>C    10.10.11.0/30 is directly connected, FastEthernet2/0</p>
+                            <p>C    10.10.12.0/30 is directly connected, GigabitEthernet0/1</p>
+                            <p>O    10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0</p>
+                            <p>O    10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0</p>
+                            <p>O    10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0</p>
+                            <p>O    10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0</p>
+                            <p>O    10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0</p>
+                            <p>S*  0.0.0.0/0 [1/0] via 10.10.11.2</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>The prefix with “longest prefix” will be matched first, in this case is “10.10.13.208/29”.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

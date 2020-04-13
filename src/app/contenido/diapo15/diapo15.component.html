@@ -1,0 +1,93 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">11</span>
+                </p>
+                <h3><span class="ball">14</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 640px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura14.png">
+                </p>
+                <p>Which command is used to find the interface that is associate with source MAC address 0010.5a0c.ffba?</p>
+                <hr>
+                <!-- <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Router: Interface configuration</label>
+                        <label class="tab" id="two-tab" for="two">Router: Acl’s</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Interface Loopback 1</p>
+                            <p>&nbsp;&nbsp;Ip address 172.16.4.1 255.255.255.0</p>
+                            <p>Interface Loopback 2</p>
+                            <p>&nbsp;&nbsp;Ip address 10.145.145.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:3::/64 eui-64</p>
+                            <p>Interface Fastethernet0/0</p>
+                            <p>&nbsp;&nbsp;Ip address 10.4.4.3 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access-group 106 in</p>
+                            <p>Interface Fastethernet0/1</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Shutdown</p>
+                            <p>Interface serial 0/0/0</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 out</p>
+                            <p>Interface serial 0/0/0.1 point-to-point</p>
+                            <p>&nbsp;&nbsp;Ip address 10.140.3.2 255.255.255.0</p>
+                            <p>Interface serial 0/0/1</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;ip address 10.45.45.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 in</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:10::/64 eui-64</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>Access-list 102 permit tcp any any eq ftp</p>
+                            <p>Access-list 102 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 102 deny tcp any any eq telnet</p>
+                            <p>Access-list 102 deny icmp any any echo-reply</p>
+                            <p>Access-list 102 permit any any</p>
+                            <br>
+                            <p>Access-list 104 permit tcp any any eq ftp</p>
+                            <p>Access-list 104 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 104 deny tcp any any eq telnet</p>
+                            <p>Access-list 104 permit icmp any any echo</p>
+                            <p>Access-list 104 deny icmp any any echo-reply</p>
+                            <p>Access-list 104 permit any any</p>
+                            <br>
+                            <p>Access-list 106 permit tcp any any eq ftp</p>
+                            <p>Access-list 106 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 106 deny tcp any any eq telnet</p>
+                            <p>Access-list 106 permit icmp any any echo-reply</p>
+                            <br>
+                            <p>Access-list 110 permit udp any any eq domain </p>
+                            <p>Access-list 110 permit udp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any eq domain </p>
+                            <p>Access-list 110 permit tcp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any</p>
+                            <br>
+                            <p>Access-list 114 permit ip 10.4.4.0 0.0.0.255 any</p>
+                            <br>
+                            <p>Access-list 115 permit ip 0.0.0.0 255.255.255.0 any</p>
+                            <br>
+                            <p>Access-list 122 deny tcp any any</p>
+                            <p>Access-list 122 deny ip any any echo-reply</p>
+                            <p>Access-list 122 permit ip any any</p>
+                        </div>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>To find out which interface associated with a given MAC address, use the show mac address-table command. It shows the learned MAC addresses and their associated interfaces. After entering this command, you will see a MAC address table</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

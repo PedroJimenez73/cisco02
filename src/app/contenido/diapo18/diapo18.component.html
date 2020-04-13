@@ -1,0 +1,110 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">8</span>
+                </p>
+                <h3><span class="ball">17</span>Refer to exhibit. Security is being added to the Corp1 router. The user on host C should be able to use a web browser to access financial information from the Finance Web Server. No other hosts from the LAN nor the Core should be able to use a web browser to access this server. Since there are multiple resources for the corporation at this location including other resources on the Finance Web Server, all other traffic should be allowed.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura17.png">
+                </p>
+                <p>The Core connection uses an IP address of 198.18.196.65</p>
+                <p>The computers in the Hosts LAN have been assigned addresses of 192.168.33.1 – 192.168.33.254</p>
+                <br>
+                <p>Host A 192.168.33.1</p>
+                <p>Host B 192.168.33.2</p>
+                <p>Host C 192.168.33.3</p>
+                <p>Host D 192.168.33.4</p>
+                <br>
+                <p>The servers in the Server LAN have been assigned addresses of 172.22.242.17 – 172.22.242.30</p>
+                <p>The Finance Web Server is assigned an IP address of 172.22.242.23.</p>
+                <p>The Public Web Server is assigned an IP address of 172.22.242.17</p>
+                <p>You must create and apply a numbered access-list with no more than three statements that will allow ONLY host C web access to the Finance Web Server. No other hosts will have web access to the Finance Web Server. All other traffic is permitted.</p>
+                <hr>
+                <!-- <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Router: Interface configuration</label>
+                        <label class="tab" id="two-tab" for="two">Router: Acl’s</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>Interface Loopback 1</p>
+                            <p>&nbsp;&nbsp;Ip address 172.16.4.1 255.255.255.0</p>
+                            <p>Interface Loopback 2</p>
+                            <p>&nbsp;&nbsp;Ip address 10.145.145.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:3::/64 eui-64</p>
+                            <p>Interface Fastethernet0/0</p>
+                            <p>&nbsp;&nbsp;Ip address 10.4.4.3 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access-group 106 in</p>
+                            <p>Interface Fastethernet0/1</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Shutdown</p>
+                            <p>Interface serial 0/0/0</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;No ip address</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 out</p>
+                            <p>Interface serial 0/0/0.1 point-to-point</p>
+                            <p>&nbsp;&nbsp;Ip address 10.140.3.2 255.255.255.0</p>
+                            <p>Interface serial 0/0/1</p>
+                            <p>&nbsp;&nbsp;Bandwith 64</p>
+                            <p>&nbsp;&nbsp;ip address 10.45.45.1 255.255.255.0</p>
+                            <p>&nbsp;&nbsp;Ip access group 102 in</p>
+                            <p>&nbsp;&nbsp;Ipv6 address 2001:410:2:10::/64 eui-64</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>Access-list 102 permit tcp any any eq ftp</p>
+                            <p>Access-list 102 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 102 deny tcp any any eq telnet</p>
+                            <p>Access-list 102 deny icmp any any echo-reply</p>
+                            <p>Access-list 102 permit any any</p>
+                            <br>
+                            <p>Access-list 104 permit tcp any any eq ftp</p>
+                            <p>Access-list 104 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 104 deny tcp any any eq telnet</p>
+                            <p>Access-list 104 permit icmp any any echo</p>
+                            <p>Access-list 104 deny icmp any any echo-reply</p>
+                            <p>Access-list 104 permit any any</p>
+                            <br>
+                            <p>Access-list 106 permit tcp any any eq ftp</p>
+                            <p>Access-list 106 permit tcp any any eq ftp-data</p>
+                            <p>Access-list 106 deny tcp any any eq telnet</p>
+                            <p>Access-list 106 permit icmp any any echo-reply</p>
+                            <br>
+                            <p>Access-list 110 permit udp any any eq domain </p>
+                            <p>Access-list 110 permit udp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any eq domain </p>
+                            <p>Access-list 110 permit tcp any eq domain any</p>
+                            <p>Access-list 110 permit tcp any any</p>
+                            <br>
+                            <p>Access-list 114 permit ip 10.4.4.0 0.0.0.255 any</p>
+                            <br>
+                            <p>Access-list 115 permit ip 0.0.0.0 255.255.255.0 any</p>
+                            <br>
+                            <p>Access-list 122 deny tcp any any</p>
+                            <p>Access-list 122 deny ip any any echo-reply</p>
+                            <p>Access-list 122 permit ip any any</p>
+                        </div>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Corp1#configure terminal</p>
+                    <p>Corp1(config)#access-list 100 permit tcp host 192.168.33.3 host 172.22.242.23 eq 80</p>
+                    <p>Corp1(config)#access-list 100 deny tcp any host 172.22.242.23 eq 80</p>
+                    <p>Corp1(config)#access-list 100 permit ip any any</p>
+                    <p>Apply this access-list to Fa0/1 interface (outbound direction)</p>
+                    <p>Corp1(config)#interface fa0/1</p>
+                    <p>Corp1(config-if)#ip access-group 100 out</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">0</span>
+                </p>
+                <h3><span class="ball">25</span>Refer to exhibit.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura25.png">
+                </p>
+                <p>A junior network administrator was given the task of configuring port security on Sw A to allow only PC_A to access the switched network through port fa0/1. If any other device is detected, the port is to drop frames from this device. The administrator configured the interface and tested it with successful pings from PC_A to RA, and then observes the output from these two show commands in the exhibit.</p>
+                <p>Which two of these changes are necessary for SwA to meet the requirements?</p>
+                <hr>
+                <!-- <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">2950Switch</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>2950Switch(config-if)# switchport port-security</p>
+                            <p>2950Switch(config-if)# switchport port-security mac-address sticky</p>
+                            <p>2950Switch(config-if)# switchport port-security maximum 1</p>
+                        </div>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Port security needs to be enabled on the interface.</p>
+                    <p>Port security needs to be configured to allow only one learned MAC address.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

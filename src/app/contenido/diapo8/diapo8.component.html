@@ -1,0 +1,72 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">18</span>
+                </p>
+                <h3><span class="ball">7</span>Refer to the exhibit. The default-information originate command is configured under the R1 OSPF configuration. After testing, workstations on VLAN 20 at Site B cannot reach a DNS server on the Internet.</h3>
+                <p>
+                    <img style="max-width: 100%; width: 720px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura7.png">
+                </p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">R1#show run | router ospf</label>
+                        <label class="tab" id="two-tab" for="two">R1#show ip route</label>
+                        <label class="tab" id="three-tab" for="three">R2#show run | router ospf</label>
+                        <label class="tab" id="four-tab" for="four">R2#show ip route</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>router ospf 1</p>
+                            <p>router-id 1.1.1.1</p>
+                            <p>log-adjacency-changes</p>
+                            <p>auto-cost reference-bandwidth 10000 </p>
+                            <p>network 10.10.10.2 0.0.0.0 area 0</p>
+                            <p>default-information originate</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>Gateway of last resort is not set</p>
+                            <p>10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks</p>
+                            <p>C 10.10.10.0/30 is directly connected, FastEthernet0/1</p>
+                            <p>O 10.10.13.0/25 [110/5766] via 10.10.10.1,00:33:22</p>
+                            <p>C 10.10.10.16/30 is directly connected, FastEthernet0/24</p>
+                            <p>O 10.10.13.144/28 [110/110] via 10.10.10.1, 01:33:33</p>
+                        </div>
+                        <div class="panel" id="three-panel">
+                            <p>router ospf 1</p>
+                            <p>router-id 2.2.2.2</p>
+                            <p>log-adjacency-changes</p>
+                            <p>auto-cost reference-bandwidth 10000</p>
+                            <p>network 10.10.10.1 0.0.0.0 area 0</p>
+                            <p>network 10.10.13.1 0.0.0.0 area 0</p>
+                        </div>
+                        <div class="panel" id="four-panel">
+                            <p>Gateway of last resort is not set</p>
+                            <p>10.0.0.0/8 is variably subnetted, 3 subnets, 3 masks</p>
+                            <p>C 10.10.10.0/30 is directly connected</p>
+                            <p>C 10.10.13.0/25 is directly connected, Vlan20</p>
+                            <p>C 10.10.13.144/28 is directly connected, Vlan40</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Configure the ip route 0.0.0.0 0.0.0.0 10.10.10.18 command on R1</p>
+                    <br>
+                    <p>The default-information originate command advertises a default route into a normal area, provided the advertising router already has a default route. But in the routing table of R1 we don’t see such a default route. Therefore, we have to configure one.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

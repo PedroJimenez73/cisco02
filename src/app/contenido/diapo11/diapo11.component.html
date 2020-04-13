@@ -1,0 +1,57 @@
+<div class="contenedor condicional">
+    <div class="row">
+        <div class="col-100">
+            <div class="actividades mostrada">
+                <p class="control">
+                    RESTANTES 
+                    <span class="number m-l-small">15</span>
+                </p>
+                <h3><span class="ball">10</span>Refer to the exhibit. The New York router is configured with static routes pointing to the Atlanta and Washington sites. Which two tasks must be performed so that the Serial0/0/0 interfaces on the Atlanta and Washington routers can reach one another?</h3>
+                <p>
+                    <img style="max-width: 100%; width: 440px; padding: 1em; display: block; margin: 0 auto;" class="esquema" src="assets/figura10.png">
+                </p>
+                <hr>
+                <div class="warpper">
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <input class="radio" id="five" name="group" type="radio">
+                    <input class="radio" id="six" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Valencia</label>
+                        <label class="tab" id="two-tab" for="two">Zaragoza</label>
+                        <label class="tab" id="three-tab" for="three">Madrid</label>
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <p>S0/0/0: 2012::1/126</p>
+                            <p>Loopback1: 2000::1/128</p>
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <p>S0/0/0: 2012::2/126</p>
+                            <p>S0/0/1: 2023::2/126</p>
+                            <p>Loopback2:2000::2/128</p>
+                        </div>
+                        <div class="panel" id="three-panel">
+                            <p>S0/0/0: 2023::3/126</p>
+                            <p>Loopback3: 2000::3/128</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="botonera">
+                    <button class="outline" (click)="seeAnswer()">Comprobar solución</button>
+                </div>
+                <div *ngIf="showAnswer" style="font-size: 1em">
+                    <p>Solution:</p>
+                    <p>Configure the ipv6 route 2023::/126 2012::2 command on the Valencia router</p>
+                    <p>ipv6 route 2023::/126 2012::2 2012::2/126 s0/0/0</p>
+                    <br>
+                    <p>Configure the ipv6 route 2012::/126 2023:2 command on the Madrid router</p>
+                    <p>ipv6 route 2012::/126 2023:2 2023::2/126 s0/0/0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

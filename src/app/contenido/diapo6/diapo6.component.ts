@@ -7,32 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Diapo6Component implements OnInit {
 
-  showQuestions = false;
-  showAnswer = false;
+    showQuestions = false;
+    showAnswer = false;
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-      this.goTop();
-  }
+    ngOnInit() {
+        this.goTop();
+    }
 
-  goTop() {
-        const scrollToTop = window.setInterval(() => {
-            const pos = window.pageYOffset;
-            if (pos > 0) {
-                window.scrollTo(0, pos - 20); 
-            } else {
-                window.clearInterval(scrollToTop);
-            }
-        }, 16);
-  }
+    goTop() {
+            const scrollToTop = window.setInterval(() => {
+                const pos = window.pageYOffset;
+                if (pos > 0) {
+                    window.scrollTo(0, pos - 20); 
+                } else {
+                    window.clearInterval(scrollToTop);
+                }
+            }, 16);
+    }
 
-  startEvaluation() {
-    this.showQuestions = true;
-  }
+    startEvaluation() {
+        this.showQuestions = true;
+    }
 
-  seeAnswer() {
-    this.showAnswer = true;
-  }
+    seeAnswer() {
+        this.showAnswer = true;
+    }
 
 }
